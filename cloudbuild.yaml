@@ -24,7 +24,7 @@ steps:
   # Run unit tests
   - name: python
     entrypoint: python
-    args: ["python", "maintest.py"] 
+    args: ["python", "main_test.py"] 
   # [END cloudbuild_python_tests_yaml]
 
   # [START cloudbuild_python_image_yaml]
