@@ -21,7 +21,7 @@ steps:
   
 # [END cloudbuild_python_dependencies_yaml]
 # Run unit tests
-  - name: python
+  - name: python:3.10
     entrypoint: python
     args: ["-m", "pytest","--junitxml=${SHORT_SHA}_test_log.xml"] 
     # [START cloudbuild_python_image_yaml]
