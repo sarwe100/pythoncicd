@@ -20,9 +20,8 @@ steps:
     args: ["install", "-r", "requirements.txt", "--user"]
   
 # [END cloudbuild_python_dependencies_yaml]
-    
-  steps:
-    # Run unit tests
+# [START cloudbuild_python_tests_yaml]
+  # Run unit tests
   - name: 'python:3.7-slim'
   id: Test
   entrypoint: /bin/sh
