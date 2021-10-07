@@ -21,9 +21,8 @@ def client():
     return main.app.test_client()
 
 
-def test_handler_with_env_variable(client):
-    os.environ["NAME"] = "Foo"
-    r = client.get("/")
+def test_uppercase():
+    assert "loud noises".upper() == "LOUD NOISES"
 
-    assert r.data.decode() == "Hello Foo!"
-    assert r.status_code == 200
+def test_reversed():
+    assert list(reversed([1, 2, 3, 4])) == [4, 3, 2, 1]
