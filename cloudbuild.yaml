@@ -14,19 +14,23 @@
 # [START cloudbuild_python_yaml]
 # [START cloudbuild_python_dependencies_yaml]
 steps:
-  # Install dependencies
+    # Install dependencies
   - name: python
-    entrypoint: /bin/sh
-    args: ['pip','install', '-t', '/workspace/lib', '-r', 'requirements.txt && pytest pythoncicd/main_test.py']
+    entrypoint: pip
+    args: ["install", "-r", "requirements.txt", "--user"]
+
 
     #args: ["install", "-r", "requirements.txt && pytest pythoncicd/main_test.py"]
 # [END cloudbuild_python_dependencies_yaml]
 
   # [START cloudbuild_python_tests_yaml]
   # Run unit tests
-  #- name: python
-   # entrypoint: python
-   # args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"] 
+  - name: 'python:3.7-slim'
+  id: Test
+  entrypoint: /bin/sh
+  args:
+  - -c
+  - 'pip install flask && python main_test.py -v'
     
   # [END cloudbuild_python_tests_yaml]
 
