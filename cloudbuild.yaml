@@ -25,7 +25,7 @@ steps:
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
     args: ['build', '-t', 
-           '$PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA', '.']
+           'PROJECT_ID/$_REPO_NAME/myimage:$SHORT_SHA', '.']
   # [END cloudbuild_python_image_yaml]
 
   # [START cloudbuild_python_push_yaml]
