@@ -17,7 +17,9 @@ steps:
   # Install dependencies
   - name: python
     entrypoint: pip
-    args: ["install", "-r", "requirements.txt && pytest pythoncicd/main_test.py"]
+    args: ['pip', 'install', '-t', '/workspace/lib', '-r', 'requirements.txt && pytest pythoncicd/main_test.py']
+
+    #args: ["install", "-r", "requirements.txt && pytest pythoncicd/main_test.py"]
 # [END cloudbuild_python_dependencies_yaml]
 
   # [START cloudbuild_python_tests_yaml]
