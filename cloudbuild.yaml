@@ -21,6 +21,9 @@ steps:
   
 # [END cloudbuild_python_dependencies_yaml]
 # Run unit tests
+  - name: python 
+    entrypoint: python
+    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"]
  
     # [START cloudbuild_python_image_yaml]
   # Docker Build
