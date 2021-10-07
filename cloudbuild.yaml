@@ -24,8 +24,8 @@ steps:
   # Run unit tests
   - name: python
     entrypoint: python
-    args: ["python", "main_test.py"] 
-    RUN PYTHONPATH=$PYTHONPATH:`pythoncicd`/ main_test -v
+    args: ["-m", "pytest", "--junitxml=${SHORT_SHA}_test_log.xml"] 
+    RUN PYTHONPATH=$PYTHONPATH:`pythoncicd`/ pytest -v
   # [END cloudbuild_python_tests_yaml]
 
   # [START cloudbuild_python_image_yaml]
