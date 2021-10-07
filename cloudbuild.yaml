@@ -23,7 +23,7 @@ steps:
 # Run unit tests
   - name: python:3.10
     entrypoint: python
-    args: ["-m", "pytest","--junitxml=${SHORT_SHA}_test_log.xml"] 
+    args: ["-m", "pytest","main_test.py"] 
     # [START cloudbuild_python_image_yaml]
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
