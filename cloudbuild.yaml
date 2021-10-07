@@ -20,7 +20,10 @@ steps:
     args: ["install", "-r", "requirements.txt", "--user"]
   
 # [END cloudbuild_python_dependencies_yaml]
-
+# Run unit tests
+- name: python
+  entrypoint: python
+  args: ["-m", "pytest"] 
   # [START cloudbuild_python_image_yaml]
   # Docker Build
   - name: 'gcr.io/cloud-builders/docker'
