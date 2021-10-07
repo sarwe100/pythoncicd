@@ -23,7 +23,7 @@ steps:
 # [START cloudbuild_python_tests_yaml]
   # Run unit tests
   - name: 'python:3.7-slim'
-    args: ['-c','pytest main_test.py -v']
+    args: ['-m','pytest main_test.py -v']
     
   # [END cloudbuild_python_tests_yaml]
 
