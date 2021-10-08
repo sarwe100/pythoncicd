@@ -42,7 +42,7 @@ steps:
   # Deploy to Cloud Run
   - name: google/cloud-sdk
     args: ['gcloud', 'run', 'deploy', 'helloworld', 
-           '--image=us-central1-docker.pkg.dev/$PROJECT_ID/myimage:$SHORT_SHA', 
+           '--image=gcr.io/helloapi-321712/pythoncicd/myimage:$SHORT_SHA', 
            '--region', 'us-central1', '--platform', 'managed', 
            '--allow-unauthenticated']
   # [END cloudbuild_python_deploy_yaml]
