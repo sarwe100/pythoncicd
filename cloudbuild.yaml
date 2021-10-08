@@ -35,7 +35,7 @@ steps:
   # [START cloudbuild_python_push_yaml]
   # Docker push to Google Artifact Registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push',  'gcr.io/$repo_name/myimage:$SHORT_SHA']
+    args: ['push',  'gcr.io/repo_name/myimage:$SHORT_SHA']
   # [END cloudbuild_python_push_yaml]
   
   # [START cloudbuild_python_deploy_yaml]
